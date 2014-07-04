@@ -81,6 +81,10 @@ class File(object):
             "auto_fullscreen",
             "widget_defaults",
             "bring_front_click",
+            "follow_focus",
+            "border_focus",
+            "border_normal",
+            "border_width",
         ]
 
         # We delay importing here to avoid a circular import issue when

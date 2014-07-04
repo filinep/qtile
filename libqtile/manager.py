@@ -134,6 +134,19 @@ class Qtile(command.CommandObject):
                 key_binder = self.config.dgroups_key_binder
             self.dgroups = DGroups(self, self.config.groups, key_binder)
 
+        self.follow_focus = False
+        self.border_focus = self.colorPixel("#00ff00")
+        self.border_normal = self.colorPixel("#000000")
+        self.border_width = 1
+        if hasattr(self.config, 'follow_focus'):
+            self.follow_focus = self.config.follow_focus
+        if hasattr(self.config, 'border_focus'):
+            self.border_focus = self.colorPixel(self.config.border_focus)
+        if hasattr(self.config, 'border_normal'):
+            self.border_normal = self.colorPixel(self.config.border_normal)
+        if hasattr(self.config, 'border_width'):
+            self.border_width = self.config.border_width
+
         if hasattr(config, "widget_defaults") and config.widget_defaults:
             _Widget.global_defaults = config.widget_defaults
         else:

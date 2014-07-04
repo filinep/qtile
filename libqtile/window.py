@@ -415,10 +415,18 @@ class _Window(command.CommandObject):
         ##for now, we just:
         send_notify = True
 
+        # check if universal focus is being used
+        if self.qtile.follow_focus and isinstance(self, Window):
+            if self.qtile.currentWindow is self:
+                bordercolor = self.qtile.border_focus
+            else:
+                bordercolor = self.qtile.border_normal
+            borderwidth = self.qtile.border_width
+
         self.x = x
         self.y = y
-        self.width = width
-        self.height = height
+        self.width = width - 2 * borderwidth
+        self.height = height - 2 * borderwidth
         self.borderwidth = borderwidth
         self.bordercolor = bordercolor
 
