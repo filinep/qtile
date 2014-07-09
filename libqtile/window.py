@@ -425,8 +425,8 @@ class _Window(command.CommandObject):
 
         self.x = x
         self.y = y
-        self.width = width - 2 * borderwidth
-        self.height = height - 2 * borderwidth
+        self.width = width
+        self.height = height
         self.borderwidth = borderwidth
         self.bordercolor = bordercolor
 
@@ -438,8 +438,8 @@ class _Window(command.CommandObject):
         kwarg = dict(
             x=x,
             y=y,
-            width=width,
-            height=height,
+            width=width - 2 * borderwidth,
+            height=height - 2 * borderwidth,
             borderwidth=borderwidth,
         )
         if above:
