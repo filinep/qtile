@@ -113,14 +113,12 @@ class Matrix(Layout):
         row_height = int(screen.height / float(column_size))
         xoffset = screen.x + column * column_width
         yoffset = screen.y + row * row_height
-        win_width = column_width - 2 * self.border_width
-        win_height = row_height - 2 * self.border_width
 
         client.place(
             xoffset,
             yoffset,
-            win_width,
-            win_height,
+            column_width,
+            row_height,
             self.border_width,
             px
         )

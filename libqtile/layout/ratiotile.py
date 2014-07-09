@@ -272,14 +272,7 @@ class RatioTile(Layout):
             bc = self.group.qtile.colorPixel(self.border_focus)
         else:
             bc = self.group.qtile.colorPixel(self.border_normal)
-        win.place(
-            x,
-            y,
-            w - self.border_width * 2,
-            h - self.border_width * 2,
-            self.border_width,
-            bc
-        )
+        win.place(x, y, w, h, self.border_width, bc)
         win.unhide()
 
     def info(self):

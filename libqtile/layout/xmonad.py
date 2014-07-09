@@ -296,7 +296,7 @@ class MonadTall(SingleWindow):
         # calculate client height and place
         if cidx > 0:
             # secondary client
-            width = width_shared - 2 * self.border_width
+            width = width_shared
             # ypos is the sum of all clients above it
             ypos = self.group.screen.dy + \
                 self._get_absolute_size_from_relative(
@@ -311,18 +311,18 @@ class MonadTall(SingleWindow):
                 xpos,
                 ypos,
                 width,
-                height - 2 * self.border_width,
+                height,
                 self.border_width,
                 px
             )
             client.unhide()
         else:
             # main client
-            width = width_main - 2 * self.border_width
+            width = width_main
             client.place(
                 xpos, self.group.screen.dy,
                 width,
-                self.group.screen.dheight - 2 * self.border_width,
+                self.group.screen.dheight,
                 self.border_width,
                 px
             )

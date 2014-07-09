@@ -292,17 +292,15 @@ class Stack(Layout):
 
         columnWidth = int(screen.width / float(len(self.stacks)))
         xoffset = screen.x + i * columnWidth
-        winWidth = columnWidth - 2 * self.border_width
 
         if s.split:
             columnHeight = int(screen.height / float(len(s)))
-            winHeight = columnHeight - 2 * self.border_width
             yoffset = screen.y + s.index(client) * columnHeight
             client.place(
                 xoffset,
                 yoffset,
-                winWidth,
-                winHeight,
+                columnWidth,
+                columnHeight,
                 self.border_width,
                 px
             )
@@ -312,8 +310,8 @@ class Stack(Layout):
                 client.place(
                     xoffset,
                     screen.y,
-                    winWidth,
-                    screen.height - 2 * self.border_width,
+                    columnWidth,
+                    screen.height,
                     self.border_width,
                     px
                 )
